@@ -1,0 +1,23 @@
+public class AppConta {
+    public static Conta criaConta(double saldoInicial, int numeroConta) {
+        return new Conta(saldoInicial, numeroConta);
+    }
+
+    public static Conta sacarDinheiro(Conta conta, double valor) {
+        conta.sacar(valor);
+        return conta;
+    }
+
+    public static Conta depositarDinheiro(Conta conta, double valor) {
+        conta.depositar(valor);
+        return conta;
+    }
+
+    public static void main(String[] args) {
+        Conta minhaConta = criaConta(1000.0, 1810); System.out.println("Após criar conta:\n" + minhaConta);
+
+        minhaConta = sacarDinheiro(minhaConta, 200.0); System.out.println("Pós saque: \n" + minhaConta);
+
+        minhaConta = depositarDinheiro(minhaConta, 500.0); System.out.println("Ao depositar:\n" +  minhaConta);
+    }
+}
